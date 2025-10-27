@@ -3,35 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazon Clone</title>
+  <title>Noon Clone</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #EAEDED;
+      font-family: "Poppins", sans-serif;
+      background-color: #f5f5f5;
     }
 
     /* Header */
-    .navbar {
-      background-color: #131921;
+    header {
+      background-color: #feee00;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 10px 20px;
-      color: white;
     }
 
     .logo {
+      display: flex;
+      align-items: center;
       font-size: 24px;
       font-weight: bold;
-      color: #FF9900;
+      color: #002e5d;
       text-decoration: none;
-      margin-right: 20px;
     }
 
     .search-bar {
       display: flex;
       flex: 1;
+      margin: 0 20px;
+      max-width: 600px;
     }
 
     .search-bar input {
@@ -39,35 +42,58 @@
       padding: 10px;
       border: none;
       border-radius: 4px 0 0 4px;
+      outline: none;
     }
 
     .search-bar button {
-      padding: 10px;
+      padding: 10px 20px;
       border: none;
-      background-color: #febd69;
+      background-color: #002e5d;
+      color: white;
       border-radius: 0 4px 4px 0;
       cursor: pointer;
     }
 
-    .cart {
-      margin-left: 20px;
-      cursor: pointer;
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 18px;
+      color: #002e5d;
     }
 
-    /* Product section */
+    /* Banner */
+    .banner {
+      width: 100%;
+      background: url("https://via.placeholder.com/1200x400/feee00/002e5d?text=Noon+Deals+Banner") center/cover no-repeat;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #002e5d;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    /* Product Grid */
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
-      padding: 20px;
+      padding: 30px;
     }
 
     .product {
       background-color: white;
-      padding: 15px;
-      border-radius: 4px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       text-align: center;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+
+    .product:hover {
+      transform: scale(1.03);
     }
 
     .product img {
@@ -77,12 +103,20 @@
     }
 
     .product h3 {
+      color: #002e5d;
       font-size: 16px;
-      margin: 10px 0;
+      margin: 10px 0 5px;
+    }
+
+    .product p {
+      font-weight: bold;
+      color: #ff9900;
     }
 
     .product button {
-      background-color: #FFD814;
+      margin-top: 8px;
+      background-color: #002e5d;
+      color: white;
       border: none;
       padding: 10px;
       border-radius: 4px;
@@ -91,60 +125,84 @@
 
     /* Footer */
     footer {
-      background-color: #232F3E;
+      background-color: #002e5d;
       color: white;
       text-align: center;
-      padding: 15px 0;
-      margin-top: 20px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    footer a {
+      color: #feee00;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .banner {
+        font-size: 24px;
+        height: 200px;
+      }
+      .search-bar {
+        display: none; /* hide search on very small screens */
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- Header -->
-  <header class="navbar">
-    <a href="#" class="logo">amazon<span style="color: white;">.clone</span></a>
+  <header>
+    <a href="#" class="logo">noon<span style="color:#ff9900;">.clone</span></a>
     <div class="search-bar">
-      <input type="text" placeholder="Search products...">
+      <input type="text" placeholder="What are you looking for?">
       <button>🔍</button>
     </div>
-    <div class="cart">🛒 Cart</div>
+    <div class="icons">
+      <span>👤 Account</span>
+      <span>🛒 Cart</span>
+    </div>
   </header>
+
+  <!-- Banner -->
+  <section class="banner">
+    Big Savings on Top Brands!
+  </section>
 
   <!-- Products -->
   <section class="products">
     <div class="product">
       <img src="https://via.placeholder.com/200x200" alt="Product 1">
-      <h3>Wireless Headphones</h3>
-      <p>$49.99</p>
+      <h3>Samsung Galaxy S24</h3>
+      <p>$699.00</p>
       <button>Add to Cart</button>
     </div>
 
     <div class="product">
       <img src="https://via.placeholder.com/200x200" alt="Product 2">
-      <h3>Smart Watch</h3>
-      <p>$79.99</p>
+      <h3>Apple AirPods Pro</h3>
+      <p>$199.00</p>
       <button>Add to Cart</button>
     </div>
 
     <div class="product">
       <img src="https://via.placeholder.com/200x200" alt="Product 3">
-      <h3>Bluetooth Speaker</h3>
-      <p>$29.99</p>
+      <h3>Smart TV 55"</h3>
+      <p>$599.00</p>
       <button>Add to Cart</button>
     </div>
 
     <div class="product">
       <img src="https://via.placeholder.com/200x200" alt="Product 4">
-      <h3>Kindle eReader</h3>
-      <p>$99.99</p>
+      <h3>Gaming Laptop</h3>
+      <p>$999.00</p>
       <button>Add to Cart</button>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Amazon Clone — Built for demo purposes</p>
+    <p>© 2025 Noon Clone | Built for demo purposes</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
   </footer>
 
 </body>
